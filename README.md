@@ -88,5 +88,58 @@ n.b: For these commands anything surrounded by angled braces <> needs to be repl
 To run tests on this project, use the command.
 
 ~~~ bash
-npm test
+$ npm test
 ~~~
+
+## Example Tests
+
+### Unit Testing
+
+An exmple unit test we can create for this project is to test the product builder. 
+
+If we test the bubilder and inpuyt a name of "Lemon", a description of "A yellow citrus fruit." and a price of 0.4... We can expect an object to be created that matches this format.
+
+~~~
+{
+    name : "Lemon",
+    description : "A yellow citrus fruit",
+    price : 0.4
+}
+~~~
+
+### Inegration Testing
+
+An example integration test we can create for this project is to test the RESTful endpoints.
+
+If we test the 'DELETE' endpint by sending a request with a method of 'DELETE' and a path of '/product/delete/1' we should expect the response to be :
+
+Status code: 204
+
+Status text: No content
+
+### System Testing
+
+Our first example of system testing 'system integration testing' to preform this on our project we could integration test the CREATE method and then check that the output from the READ method is expected.
+
+If we created our lemon above and recieved the 201 status code and status text created we could then read all of the products and expect a status code of 200, status text of   ok and a message body containing the lemon thatwe created
+
+Alternatively we could 'black box' system test by using the frount end to create a new proct and reading the page to make sure that the new prodct has been created.
+
+### User Acceptance Testing
+
+Test that we can updated the database from the UI:
+
+**As a** user
+
+**When** I enter a product id into the update field
+
+**And** enter new information
+
+**I want** to be able to see that the product has updated.
+
+GIVEN the a user can access the front-end of the UI
+
+WHEN the user enters info into the input boxes
+
+THEN the web page displays the info we inputted
+
