@@ -1,3 +1,4 @@
+echo "running build container script"
 git pull
 npm i
 npm test
